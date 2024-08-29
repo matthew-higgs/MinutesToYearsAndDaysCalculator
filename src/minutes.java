@@ -1,4 +1,4 @@
-public class yearlydaily {
+public class minutes {
     public static void main(String[] args) {
         printYearsAndDays(525600);
         printYearsAndDays(1051200);
@@ -7,9 +7,16 @@ public class yearlydaily {
     }
 
     public static void printYearsAndDays(long minutes) {
-        long hours = minutes / 60;
-        long days = hours / 24;
-        long years = days / 365;
-        long leftoverDays =//TODO:
+        if (minutes < 0) {
+          System.out.println("Invalid Value");
+        }
+        else {
+            long hours = minutes / 60;
+            long days = hours / 24;
+            long years = days / 365;
+            long leftoverDays = days % 365;
+            String result = minutes + " min = " + years + " y and " + leftoverDays + " d";
+            System.out.println(result);
+        }
     }
 }
